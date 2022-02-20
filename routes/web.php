@@ -14,3 +14,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Admin Login routes
+
+Route::get('/admin/login','adminLoginController@adminLogin')->name('admin.login');
+Route::post('/admin/login/submit','adminLoginController@submit')->name('admin.login.submit');
+
+Route::get('/logout','adminLoginController@logout')->name('admin.logout');
+Route::get('/admin/dashboard', 'pocoController@dashboard')->name('admin.dashboard');
