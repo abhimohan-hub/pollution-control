@@ -50,6 +50,6 @@ class adminLoginController extends Controller
             Auth::logout();
             return redirect()->back();
         }
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.frontend');
     }
 }
