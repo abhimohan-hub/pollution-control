@@ -6,19 +6,11 @@ use Illuminate\Http\Request;
 
 class pocoController extends Controller
 {
-    public function dashboard() {
-        return view('layouts.backend.dashboard');
+    public function adminDashboard() {
+        return view('layouts.backend.adminDash');
     }
 
-    public function adminFrontend() {
-        return view('layouts.backend.layouts.admin.frontend');
-    }
-
-    public function userLoginDashboard() {
-        return view('layouts.frontend.layouts.userLoginDashboard');
-    }
-
-    public function userLoggedinDashboard() {
-        return view('layouts.frontend.layouts.userloggedin.userLoggedIn');
+    public function userDash() {
+        return view('layouts.frontend.layouts.userDash');
     }
 }

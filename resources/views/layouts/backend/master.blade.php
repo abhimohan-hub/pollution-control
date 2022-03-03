@@ -11,8 +11,20 @@
 
     <title>SB Admin 2 - Dashboard</title>
 
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        width: 50%;
+    }
+</style>
+
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -20,6 +32,15 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -28,7 +49,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('layouts.backend.layouts.admin.layouts.includes.sidebar')
+        @include('layouts.backend.includes.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -38,7 +59,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('layouts.backend.layouts.admin.layouts.includes.header')
+                @include('layouts.backend.includes.header')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -48,7 +69,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            @include('layouts.backend.layouts.admin.layouts.includes.footer')
+            @include('layouts.backend.includes.footer')
             <!-- End of Footer -->
 
         </div>
