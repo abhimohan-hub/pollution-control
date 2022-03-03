@@ -60,6 +60,7 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'from' => ['address' => 'japic48630@porjoton.com', 'name' => 'pollution control system'],
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol

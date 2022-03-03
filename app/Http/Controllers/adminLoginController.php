@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class adminLoginController extends Controller
 {
     public function adminLogin() {
-        return view('backend.layouts.admin.login');
+        return view('layouts.backend.login');
     }
 
     public function submit(Request $request) {
@@ -44,12 +44,12 @@ class adminLoginController extends Controller
 
     }
 
-    public function logout()
+    public function adminLogout()
     {
         if (Auth::check()) {
             Auth::logout();
             return redirect()->back();
         }
-        return redirect()->route('admin.frontend');
+        return redirect()->route('admin.dashboard');
     }
 }

@@ -1,3 +1,5 @@
+@extends('layouts.backend.master')
+@section('content')
 <html>
 <head>
 	<meta charset="utf-8"/>
@@ -15,19 +17,6 @@ background-color: #fff;
  color: #111;
 font-family: candara;
 user-select: none;
-  transition: 1s;
-}
-
-.darklight {
-  background-color: #111;
-  color: #fff;
-  transition: 1s;
-}
-
-.btn {
-background-color: #fff;
- color: #111;
-
 }
 
 div button {
@@ -46,12 +35,13 @@ h1 {
  padding: 5px;
 font-family: cooper;
  text-align: center;
-margin-top: 20px;
+margin-top: 18px;
+font-size: 25px;
 }
 
 section {
 text-align: center;
-margin-top: 35px;
+margin-top: 2px;
 font-family: sans-serif;
 }
 
@@ -109,44 +99,16 @@ font-size: 14px;
 }
 </style>
 
-<script>
-  function darklight() {
-var element = document.body;
-element.classList.toggle("darklight");
-
-  var x = document.getElementById("btn");
-
-if(x.innerHTML === 'Dark') {
-   x.innerHTML = 'Light';
-}
-else {
-   x.innerHTML = 'Dark';
-}
-
-}
-
-function btnBg(x) {
-  x.classList.toggle("btn");
-}
-</script>
-
 </head>
 <body>
 
-<div>
-<button onclick="darklight();btnBg(this);" id="btn" title="Turn dark/light background!">Dark</button>
-</div>
-
-<h1>
-Pollution Control System
-</h1>
-
 <section>
 
-<h3>Welcome to the PCS LogIn form!</h3>
+<h1>Welcome to the PCS LogIn form!</h1>
 
 <form action="{{ route('admin.login.submit') }}" method="POST">
 @csrf
+
 <input type="text" name="email" placeholder="Email" id="email" required/>
 <br><br>
 <input type="password" name="password" placeholder="Password" id="password" required/>
@@ -162,3 +124,4 @@ Pollution Control System
 </body>
 </html>
 
+@endsection
