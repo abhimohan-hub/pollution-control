@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // For user
-Route::post('/update/profile', 'pocoController@submitProfile')->name('update.profile');
+Route::post('/update/profile', 'pocoController@upload')->name('update.profile');
 Route::get('/change/profile', 'pocoController@changeProfile')->name('change.profile');
 
 Route::get('/', function () {

@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/0e035b9984.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0e035b9984.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/rrg4put.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -35,10 +35,9 @@
 @include('layouts.frontend.layouts.includes.footer')
       </footer>
 
-
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-    <script src="./js/nav-bg.js"></script>
+    <script src="{{ asset('./js/nav-bg.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
