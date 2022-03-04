@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// For user
+Route::post('/update/profile', 'pocoController@submitProfile')->name('update.profile');
+Route::get('/change/profile', 'pocoController@changeProfile')->name('change.profile');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,8 +31,6 @@ Illuminate\Support\Facades\Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// For user
-Route::get('/user', 'pocoController@userDash')->name('user');
 
 // For Newsletter
 Route::post('/sendmail', 'mailController@sendmail')->name('send.mail');
