@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\pcs;
+use Illuminate\Http\Request;
 
 class pocoController extends Controller
 {
@@ -12,35 +11,32 @@ class pocoController extends Controller
         return view('layouts.backend.adminDash');
     }
 
-public function showProfile() {
-    $profiles = pcs::all();
-    return view('welcome', compact('profiles'));
-}
-
 public function changeProfile() {
     return view('layouts.frontend.layouts.profile');
 }
 
-    public function updateProfile(Request $request, $id) {
-        $image_url = '';
+public function upload(Request $request)
+{
+    $validator = [
+        'name' => ['required', 'string', 'max:255'],
+        'address' => ['required', 'string', 'max:255'],
+        'contact' => ['required', 'string', 'max:15'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        $this->validate($request, ['file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',]),
+    ];
 
-        if($request->hasFile('profile')) {
-            $file = $request->file('profile');
-            $new_name = str_random(5).time().$file->getClientOriginalName();
-            $path =public_path('/uploads');
-            $file->move($path, $new_name);
-            $image_url = asset('uploads/'.$new_name);
-            // dd($image_url);
-        }
-
-        $data = [
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'profile' => $image_url ?? '',
-        ];
-
-        pcs::where('id', $id)->update($data);
-        return redirect()->route('/');
+    if($request->hasFile('image')){
+        $filename = $request->image->getClientOriginalName();
+        $request->image->storeAs('images',$filename,'public');
+        Auth()->user()->update([
+            'name'=>$request->get('name'),
+            'address'=>$request->get('address'),
+            'contact'=>$request->get('contact'),
+            'email'=>$request->get('email'),
+            'image'=>$filename,
+        ]);
     }
+    return redirect()->back()->withErrors($validator)->withInput();
+}
 
 }
