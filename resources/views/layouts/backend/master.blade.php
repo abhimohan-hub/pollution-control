@@ -9,7 +9,7 @@
     <meta name="description" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Pollution Control - Admin</title>
 
 <style>
     footer {

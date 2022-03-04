@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Http\Request;
 
 class adminLoginController extends Controller
